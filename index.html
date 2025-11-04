@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colégio Vitória Kids - Onde o aprendizado e o afeto constroem vitórias</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="logo2.png" alt="Logo Colégio Vitória Kids">
+            </a>
+            
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#inicio" class="active">Início</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#pilares">Diferenciais</a></li>
+                    <li><a href="#unidades" class="btn btn-primary">Unidades</a></li>
+                </ul>
+            </nav>
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="inicio">
+            <div class="container">
+                <h1>Bem-vindos ao Colégio Vitória Kids!</h1>
+                <p>Onde o aprendizado e o afeto constroem grandes vitórias.</p>
+                <a href="#unidades" class="btn btn-secondary">Conheça as Unidades</a>
+            </div>
+        </section>
+
+        <section class="pilares-destaque" id="pilares">
+            <div class="container">
+                <h2>Nossos Diferenciais</h2>
+                <p class="subtitle">Tudo o que seu filho precisa para um desenvolvimento completo.</p>
+                
+                <div class="slider-container">
+                    <div class="pilar-slider-viewport">
+                        <div class="pilar-slider-track" id="pilar-track">
+                            <div class="pilar-card"><h3>Pedagogia Consistente</h3></div>
+                            <div class="pilar-card"><h3>Programa Bilíngue</h3></div>
+                            <div class="pilar-card"><h3>Robociências</h3></div>
+                            <div class="pilar-card"><h3>Nave à Vela</h3></div>
+                            <div class="pilar-card"><h3>Hábitos Saudáveis (Esportes)</h3></div>
+                            <div class="pilar-card"><h3>Lanches com Frutas e Sucos</h3></div>
+                            <div class="pilar-card"><h3>Escola da Inteligência</h3><p>Parceria com Dr. Augusto Cury</p></div>
+                            <div class="pilar-card"><h3>Gênios das Finanças</h3></div>
+                            <div class="pilar-card"><h3>Coala (Assistência Médica)</h3><p>Proteção para seu filho sem custo</p></div>
+                            <div class="pilar-card"><h3>Escola com Princípios Cristãos</h3></div>
+                        </div>
+                    </div>
+                    <div class="slider-nav">
+                        <button id="pilar-prev" class="nav-btn" aria-label="Anterior">&lt;</button>
+                        <button id="pilar-next" class="nav-btn" aria-label="Próximo">&gt;</button>
+                    </div>
+                    <div class="slider-dots" id="pilar-dots"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-summary" id="sobre">
+            <div class="container">
+            
+                <div class="content-gallery-slider">
+                    <div class="slider-container">
+                        <div class="gallery-slider-viewport">
+                            <div class="gallery-slider-track" id="gallery-track">
+                                <div class="gallery-slide"><img src="fotoCrianca.png" alt="Foto da estrutura do colégio"></div>
+                                <div class="gallery-slide"><img src="fotoCrianca2.png" alt="Crianças brincando no pátio"></div>
+                                <div class="gallery-slide"><img src="fotoCrianca3.png" alt="Atividade em sala de aula"></div>
+                            </div>
+                        </div>
+                        <div class="slider-nav">
+                            <button id="gallery-prev" class="nav-btn" aria-label="Anterior">&lt;</button>
+                            <button id="gallery-next" class="nav-btn" aria-label="Próximo">&gt;</button>
+                        </div>
+                        <div class="slider-dots" id="gallery-dots"></div>
+                    </div>
+                </div>
+                
+                <div class="about-text">
+                    <h2>Um Começo Vitorioso Para Seu Filho</h2>
+                    <p>No Vitória Kids, acreditamos que cada criança é única. Nossa missão é oferecer um ambiente estimulante e acolhedor, onde seu filho pode explorar, brincar e se desenvolver social, emocional e cognitivamente. Somos mais que um colégio; somos uma família.</p>
+                    <a href="#unidades" class="btn btn-primary">Ver Nossas Unidades</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="container">
+                <h2>O que os pais dizem sobre nós</h2>
+                <div class="testimonial-grid">
+                    <blockquote>"Matricular meu filho no Vitória Kids foi a melhor decisão! Ele está se desenvolvendo muito rápido e ama ir para a escola. A equipe é incrível e muito atenciosa."<footer>- Ana Silva, Mãe do Lucas</footer></blockquote>
+                    <blockquote>"O programa bilíngue é fantástico e a estrutura é ótima. Sinto total segurança em deixar minha filha aqui. Recomendo de olhos fechados!"<footer>- Marcos Pereira, Pai da Júlia</footer></blockquote>
+                </div>
+            </div>
+        </section>
+        
+        <section class="unidade" id="unidades"> <div class="container">
+                <div class="unidade-header">
+                    <h2>Unidade Lagoa Nova</h2>
+                    <p class="subtitle">Conheça nossa estrutura completa em Lagoa Nova.</p>
+                </div>
+                <div class="unidade-content">
+                    <div class="unidade-gallery content-gallery-slider">
+                        <div class="slider-container">
+                            <div class="gallery-slider-viewport">
+                                <div class="gallery-slider-track" id="lagoa-track">
+                                    <div class="gallery-slide"><img src="https://via.placeholder.com/500x350/aaa/fff?text=Lagoa+Nova+1" alt="Foto Unidade Lagoa Nova 1"></div>
+                                    <div class="gallery-slide"><img src="https://via.placeholder.com/500x350/bbb/fff?text=Lagoa+Nova+2" alt="Foto Unidade Lagoa Nova 2"></div>
+                                    <div class="gallery-slide"><img src="https://via.placeholder.com/500x350/ccc/fff?text=Lagoa+Nova+3" alt="Foto Unidade Lagoa Nova 3"></div>
+                                </div>
+                            </div>
+                            <div class="slider-nav">
+                                <button id="lagoa-prev" class="nav-btn" aria-label="Anterior">&lt;</button>
+                                <button id="lagoa-next" class="nav-btn" aria-label="Próximo">&gt;</button>
+                            </div>
+                            <div class="slider-dots" id="lagoa-dots"></div>
+                        </div>
+                    </div>
+                    <div class="unidade-texto">
+                        <h3>Estrutura e Diferenciais</h3>
+                        <p>Nossa unidade em Lagoa Nova oferece amplas salas de aula, parquinho, área de lazer e um ambiente 100% seguro para o desenvolvimento do seu filho.</p>
+                        <a href="https://wa.me/5584999991111" target="_blank" class="btn btn-secondary">
+                            <i class="fab fa-whatsapp"></i> WhatsApp Lagoa Nova
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="unidade bg-light" id="parnamirim">
+            <div class="container">
+                <div class="unidade-header">
+                    <h2>Unidade Parnamirim</h2>
+                    <p class="subtitle">Conheça nossa estrutura completa em Parnamirim.</p>
+                </div>
+                <div class="unidade-content">
+                    <div class="unidade-gallery content-gallery-slider">
+                        <div class="slider-container">
+                            <div class="gallery-slider-viewport">
+                                <div class="gallery-slider-track" id="parnamirim-track">
+                                    <div class="gallery-slide"><img src="https://via.placeholder.com/500x350/aaa/fff?text=Parnamirim+1" alt="Foto Unidade Parnamirim 1"></div>
+                                    <div class="gallery-slide"><img src="https://via.placeholder.com/500x350/bbb/fff?text=Parnamirim+2" alt="Foto Unidade Parnamirim 2"></div>
+                                    <div class="gallery-slide"><img src="https://via.placeholder.com/500x350/ccc/fff?text=Parnamirim+3" alt="Foto Unidade Parnamirim 3"></div>
+                                </div>
+                            </div>
+                            <div class="slider-nav">
+                                <button id="parnamirim-prev" class="nav-btn" aria-label="Anterior">&lt;</button>
+                                <button id="parnamirim-next" class="nav-btn" aria-label="Próximo">&gt;</button>
+                            </div>
+                            <div class="slider-dots" id="parnamirim-dots"></div>
+                        </div>
+                    </div>
+                    <div class="unidade-texto">
+                        <h3>Estrutura e Diferenciais</h3>
+                        <p>Nossa unidade em Parnamirim oferece amplas salas de aula, parquinho, área de lazer e um ambiente 100% seguro para o desenvolvimento do seu filho.</p>
+                        <a href="https://wa.me/5584999992222" target="_blank" class="btn btn-secondary">
+                            <i class="fab fa-whatsapp"></i> WhatsApp Parnamirim
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="unidade" id="satelite">
+            <div class="container">
+                <div class="unidade-header">
+                    <h2>Unidade Satélite</h2>
+                    <p class="subtitle">Conheça nossa estrutura completa no Satélite.</p>
+                </div>
+                <div class="unidade-content">
+                    <div class="unidade-gallery content-gallery-slider">
+                        <div class="slider-container">
+                            <div class="gallery-slider-viewport">
+                                <div class="gallery-slider-track" id="satelite-track">
+                                    <div class="gallery-slide"><img src="https://via.placeholder.com/500x350/aaa/fff?text=Sat%C3%A9lite+1" alt="Foto Unidade Satélite 1"></div>
+                                    <div class="gallery-slide"><img src="https://via.placeholder.com/500x350/bbb/fff?text=Sat%C3%A9lite+2" alt="Foto Unidade Satélite 2"></div>
+                                    <div class="gallery-slide"><img src="https://via.placeholder.com/500x350/ccc/fff?text=Sat%C3%A9lite+3" alt="Foto Unidade Satélite 3"></div>
+                                </div>
+                            </div>
+                            <div class="slider-nav">
+                                <button id="satelite-prev" class="nav-btn" aria-label="Anterior">&lt;</button>
+                                <button id="satelite-next" class="nav-btn" aria-label="Próximo">&gt;</button>
+                            </div>
+                            <div class="slider-dots" id="satelite-dots"></div>
+                        </div>
+                    </div>
+                    <div class="unidade-texto">
+                        <h3>Estrutura e Diferenciais</h3>
+                        <p>Nossa unidade no Satélite oferece amplas salas de aula, parquinho, área de lazer e um ambiente 100% seguro para o desenvolvimento do seu filho.</p>
+                        <a href="https://wa.me/5584999993333" target="_blank" class="btn btn-secondary">
+                            <i class="fab fa-whatsapp"></i> WhatsApp Satélite
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <img src="logo2.png" alt="Logo Colégio Vitória Kids" class="footer-logo">
+                    <p>Onde o aprendizado e o afeto constroem grandes vitórias.</p>
+                    <div class="footer-social-icons">
+                        <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3>Links Rápidos</h3>
+                    <nav class="footer-social">
+                        <a href="#inicio">Início</a>
+                        <a href="#sobre">Sobre Nós</a>
+                        <a href="#pilares">Diferenciais</a>
+                        <a href="#unidades">Unidades</a>
+                    </nav>
+                </div>
+                
+                <div>
+                    <h3>Nossas Unidades</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Unidade Lagoa Nova</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Unidade Parnamirim</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Unidade Satélite</p>
+                    <p style="margin-top: 15px;">
+                        <i class="fas fa-envelope"></i> contato@vitoriakids.com.br
+                    </p>
+                </div>
+
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Colégio Vitória Kids. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

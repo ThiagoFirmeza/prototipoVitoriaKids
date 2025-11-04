@@ -1,0 +1,670 @@
+/* Salve este arquivo como: style.css (SUBSTITUA O ANTIGO) */
+
+/* --- Variáveis Globais (CORES DA LOGO) --- */
+:root {
+    --color-primary: #005BFF;    /* Azul da Logo */
+    --color-secondary: #FFC300; /* Amarelo da Logo */
+    --color-accent: #E63946;    /* Vermelho da Logo */
+    
+    --color-text: #333;
+    --color-text-light: #555;
+    --color-white: #ffffff;
+    --color-bg-light: #f9f9f9;
+    --color-black: #000000;
+}
+
+/* --- Reset Básico --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Nunito', 'Arial', sans-serif;
+    line-height: 1.7;
+    color: var(--color-text);
+    background-color: var(--color-white);
+}
+
+/* --- Utilitários --- */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 60px 0;
+}
+
+h1, h2, h3 {
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2.2rem; color: var(--color-primary); }
+h3 { font-size: 1.4rem; }
+p { margin-bottom: 15px; color: var(--color-text-light); }
+p.subtitle {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-top: -20px;
+    margin-bottom: 30px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-primary);
+}
+
+/* --- Botões --- */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+/* Estilo para ícone dentro do botão */
+.btn i {
+    margin-right: 8px;
+}
+
+.btn-primary {
+    background-color: var(--color-accent); /* Vermelho */
+    color: var(--color-white);
+}
+.btn-primary:hover {
+    background-color: #c9303d;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: var(--color-secondary); /* Amarelo */
+    color: var(--color-text);
+}
+.btn-secondary:hover {
+    background-color: #e0ac00;
+    transform: translateY(-2px);
+}
+
+/* --- 1. Cabeçalho e Menu (Navbar ATUALIZADO) --- */
+.navbar {
+    background: var(--color-black); /* Fundo preto para combinar com a logo */
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    max-height: 80px; /* Aumentado */
+    width: auto;
+    display: block;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu li {
+    margin-left: 25px;
+}
+
+.nav-menu a {
+    color: var(--color-white); /* Links brancos no menu */
+    font-weight: 700;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--color-secondary); /* Destaque amarelo ao passar o mouse */
+    border-bottom-color: var(--color-secondary);
+}
+
+.nav-menu .btn-primary {
+    padding: 10px 22px;
+}
+
+/* --- 2. Seção Principal (Hero) --- */
+.hero {
+    height: 90vh;
+    min-height: 500px;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1517013913164-6c7873c3e2e2?q=80&w=1770&auto=format&fit=crop') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-white);
+    /* Ajuste no padding-top para compensar o header maior (80px logo + 20px padding = 100px) */
+    padding-top: 100px; 
+}
+.hero h1 { font-size: 3.5rem; margin-bottom: 15px; }
+.hero p { font-size: 1.5rem; color: var(--color-white); margin-bottom: 30px; }
+
+/* --- 3. ESTILOS DE SLIDER GERAIS (Para ambos os carrosséis) --- */
+.pilares-destaque {
+    background-color: var(--color-bg-light);
+    /* Ajuste no padding-top para compensar o header maior */
+    padding-top: 100px;
+}
+
+/* Corrige o scroll ao clicar no link "Diferenciais" */
+#pilares {
+    scroll-margin-top: 100px; /* Altura aproximada do header */
+}
+
+
+.pilares-destaque h2 {
+    text-align: center;
+}
+
+.slider-container {
+    position: relative;
+    padding: 0 50px; /* Espaço para as setas */
+}
+
+/* --- Estilos Carrossel 1 (Pilares) --- */
+.pilar-slider-viewport {
+    width: 100%;
+    overflow: hidden; 
+}
+
+.pilar-slider-track {
+    display: flex;
+    width: 200%; /* 2 páginas */
+    transition: transform 0.5s ease-in-out;
+}
+
+.pilar-card {
+    flex-basis: 10%; /* 1/10 da largura do track (200%) = 20% do viewport */
+    flex-shrink: 0;
+    background: var(--color-white);
+    padding: 25px;
+    margin: 0 10px; /* Espaçamento entre os cards */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid var(--color-primary);
+    transition: all 0.3s ease;
+}
+
+.pilar-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.pilar-card h3 {
+    color: var(--color-primary);
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+.pilar-card p {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+/* --- Controles de Navegação (Setas) - GERAL --- */
+.slider-nav {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    pointer-events: none; 
+}
+
+.nav-btn {
+    pointer-events: all; 
+    background: var(--color-white);
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.2s;
+    z-index: 10;
+}
+.nav-btn:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+/* Posição específica das setas */
+.slider-container .nav-btn[id$="-prev"] { position: absolute; left: 0px; }
+.slider-container .nav-btn[id$="-next"] { position: absolute; right: 0px; }
+
+
+.nav-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: #eee;
+    color: #aaa;
+}
+
+/* --- Controles de Paginação (Bolinhas) - GERAL --- */
+.slider-dots {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ccc;
+    border: none;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.dot.active {
+    background: var(--color-primary);
+}
+
+
+/* --- 4. Resumo Sobre Nós (COM CARROSSEL) --- */
+
+/* Corrige o scroll ao clicar no link "Sobre Nós" */
+#sobre {
+    scroll-margin-top: 100px; /* Altura aproximada do header */
+}
+
+.about-summary .container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+.about-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* ================================================= */
+/* --- ESTILOS DO CARROSSEL DE GALERIA (GERAL) ---   */
+/* Usado em "Sobre Nós" e nas "Unidades"             */
+/* ================================================= */
+
+.content-gallery-slider {
+    flex: 1;
+    min-width: 300px;
+    padding: 0 10px;
+}
+
+.gallery-slider-viewport {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px; /* Arredonda a borda do viewport */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-slider-track {
+    display: flex;
+    /* 3 imagens = 300% de largura total */
+    width: 300%; 
+    transition: transform 0.5s ease-in-out;
+}
+
+.gallery-slide {
+    /* 1/3 da largura do track (300%) = 100% do viewport */
+    flex-basis: 33.3333%; 
+    flex-shrink: 0;
+}
+
+.gallery-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Ajusta as setas para ficarem dentro da área da imagem */
+.content-gallery-slider .slider-container {
+    padding: 0 40px;
+}
+.content-gallery-slider .nav-btn {
+    color: var(--color-white);
+    background: rgba(0, 0, 0, 0.3);
+    border: none;
+}
+.content-gallery-slider .nav-btn:hover {
+    background: var(--color-primary);
+}
+.content-gallery-slider .nav-btn[id$="-prev"] { left: 15px; }
+.content-gallery-slider .nav-btn[id$="-next"] { right: 15px; }
+
+
+/* --- 5. Depoimentos --- */
+.testimonials {
+    background-color: var(--color-primary); /* Fundo Azul */
+    color: var(--color-white);
+}
+.testimonials h2 {
+    color: var(--color-white);
+    text-align: center;
+}
+.testimonial-grid {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+.testimonial-grid blockquote {
+    flex: 1;
+    min-width: 300px;
+    background: var(--color-white);
+    color: var(--color-text-light);
+    padding: 30px;
+    border-radius: 10px;
+    border-left: 5px solid var(--color-secondary); /* Borda Amarela */
+    font-size: 1.1rem;
+    font-style: italic;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.testimonial-grid footer {
+    margin-top: 15px;
+    font-weight: 700;
+    color: var(--color-primary);
+    font-style: normal;
+}
+
+/* --- 6. SEÇÕES DAS UNIDADES --- */
+
+.unidade {
+    padding: 60px 0;
+}
+.unidade.bg-light {
+    background-color: var(--color-bg-light);
+}
+
+/* Corrige o scroll ao clicar no link "Unidades" */
+#unidades, #parnamirim, #satelite {
+    scroll-margin-top: 100px; /* Altura aproximada do header */
+}
+
+.unidade-header h2 {
+    text-align: center;
+}
+.unidade-header .subtitle {
+    margin-bottom: 40px;
+}
+
+.unidade-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.unidade-gallery {
+    flex: 1;
+}
+.unidade-texto {
+    flex: 1;
+    min-width: 300px;
+}
+.unidade-texto h3 {
+    color: var(--color-primary);
+}
+
+
+/* --- 7. RODAPÉ (COMPLETO) --- */
+.footer {
+    background-color: #2c3e50;
+    color: var(--color-white);
+    padding-top: 50px;
+}
+.footer-logo {
+    max-height: 80px; /* Aumentado para 80px */
+    margin-bottom: 15px;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+/* Cada coluna do footer */
+.footer-content > div {
+    flex: 1;
+    min-width: 220px;
+}
+
+.footer-content h3 { 
+    color: var(--color-secondary); 
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+.footer-content p { 
+    color: #bdc3c7; 
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+/* Estilizando ícones do footer */
+.footer-content p i {
+    margin-right: 8px;
+    color: var(--color-secondary);
+}
+
+.footer-social a {
+    display: block;
+    color: #bdc3c7;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+    font-size: 0.95rem;
+}
+.footer-social a:hover { color: var(--color-secondary); }
+
+/* Ícones de redes sociais (Instagram, Facebook) */
+.footer-social-icons a {
+    display: inline-block;
+    color: var(--color-white);
+    background-color: #34495e;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 50%;
+    margin-right: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+.footer-social-icons a:hover {
+    background-color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #34495e;
+    font-size: 0.9rem;
+    color: #bdc3c7;
+}
+
+/* --- Responsividade (Mobile) --- */
+.menu-toggle { 
+    display: none; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+} 
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-white);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    .hero h1 { font-size: 2.5rem; }
+    .hero p { font-size: 1.2rem; }
+
+    /* --- Menu Mobile --- */
+    .menu-toggle { display: block; }
+    
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        left: -100%; /* Começa fora da tela */
+        width: 100%;
+        height: 100vh;
+        background: var(--color-black);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: left 0.3s ease;
+        display: flex;
+    }
+    
+    .nav-menu.active {
+        left: 0; /* Entra na tela */
+    }
+    
+    .nav-menu ul { 
+        flex-direction: column; 
+        width: 100%;
+        text-align: center;
+    }
+    .nav-menu li { 
+        margin: 20px 0; 
+    }
+    .nav-menu a {
+        font-size: 1.3rem;
+    }
+    .nav-menu .btn-primary {
+        font-size: 1.1rem;
+        padding: 12px 28px;
+    }
+    
+    /* Animação do "X" do menu */
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+
+    /* ========================================================= */
+    /* --- CORREÇÃO: Slider de Pilares no Mobile (Scrollável) --- */
+    /* ========================================================= */
+    
+    /* Esconde as setas e dots, pois será scroll manual */
+    .pilares-destaque .slider-nav {
+        display: none;
+    }
+    .pilares-destaque .slider-dots {
+        display: none;
+    }
+    
+    /* Remove o padding lateral para o scroll ir de ponta a ponta */
+    .pilares-destaque .slider-container {
+        padding: 0;
+    }
+
+    /* O viewport agora será scrollável horizontalmente */
+    .pilar-slider-viewport {
+        overflow-x: auto;
+        /* Adiciona um efeito de "parada" ao scrollar */
+        scroll-snap-type: x mandatory;
+        /* Esconde a barra de scroll */
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    .pilar-slider-viewport::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+
+    /* O track volta a ter a largura baseada nos itens */
+    .pilar-slider-track {
+        /* A largura não será mais 200% nem 100% */
+        width: auto; 
+        /* Mantém a direção horizontal */
+        flex-direction: row;
+        /* Ignora o JS de transformação */
+        transform: none !important; 
+    }
+
+    /* Cada card agora terá uma largura definida */
+    .pilar-card {
+        /* Cada card ocupará ~80% da tela */
+        flex-basis: 80%;
+        width: 80%;
+        flex-shrink: 0;
+        /* Faz o card "parar" no lugar certo ao scrollar */
+        scroll-snap-align: start;
+        /* Ajusta a margem para o scroll */
+        margin: 0 0 0 10px; /* Remove inferior, mantém lateral */
+    }
+    .pilar-card:first-child {
+        margin-left: 20px; /* Um padding inicial */
+    }
+    .pilar-card:last-child {
+        margin-right: 20px; /* Um padding final */
+    }
+    
+    /* --- Fim da Correção --- */
+    
+    
+    .about-summary .container {
+        flex-direction: column;
+    }
+    
+    /* Ajustes no slider da galeria para mobile */
+    .content-gallery-slider {
+        padding: 0;
+        width: 100%;
+    }
+    .content-gallery-slider .slider-container {
+        padding: 0 40px; /* Mantém o padding para as setas */
+    }
+    
+    /* Ajustes das seções de unidade no mobile */
+    .unidade-content {
+        /* Faz a imagem vir primeiro que o texto */
+        flex-direction: column;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
