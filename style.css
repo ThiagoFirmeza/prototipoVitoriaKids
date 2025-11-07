@@ -4,13 +4,13 @@
 :root {
     --color-primary: #005BFF;    /* Azul da Logo */
     --color-secondary: #FFC300; /* Amarelo da Logo */
-    --color-accent: #E63946;    /* Vermelho da Logo */
+    --color-accent: #FF0000;    /* Vermelho da Logo */
     
     --color-text: #333;
     --color-text-light: #555;
     --color-white: #ffffff;
     --color-bg-light: #f9f9f9;
-    --color-black: #000000;
+    --color-black:#000080;
 }
 
 /* --- Reset Básico --- */
@@ -83,7 +83,7 @@ a {
     color: var(--color-white);
 }
 .btn-primary:hover {
-    background-color: #c9303d;
+    background-color: #8e0510;
     transform: translateY(-2px);
 }
 
@@ -151,13 +151,15 @@ a {
 .hero {
     height: 90vh;
     min-height: 500px;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1517013913164-6c7873c3e2e2?q=80&w=1770&auto=format&fit=crop') no-repeat center center/cover;
+    
+    /* Corrigido: Removido espaço extra do nome do arquivo */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('fotoInicial.png') no-repeat center center/cover;
+    
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: var(--color-white);
-    /* Ajuste no padding-top para compensar o header maior (80px logo + 20px padding = 100px) */
     padding-top: 100px; 
 }
 .hero h1 { font-size: 3.5rem; margin-bottom: 15px; }
@@ -166,13 +168,11 @@ a {
 /* --- 3. ESTILOS DE SLIDER GERAIS (Para ambos os carrosséis) --- */
 .pilares-destaque {
     background-color: var(--color-bg-light);
-    /* Ajuste no padding-top para compensar o header maior */
     padding-top: 100px;
 }
 
-/* Corrige o scroll ao clicar no link "Diferenciais" */
 #pilares {
-    scroll-margin-top: 100px; /* Altura aproximada do header */
+    scroll-margin-top: 100px; 
 }
 
 
@@ -182,7 +182,7 @@ a {
 
 .slider-container {
     position: relative;
-    padding: 0 50px; /* Espaço para as setas */
+    padding: 0 50px; 
 }
 
 /* --- Estilos Carrossel 1 (Pilares) --- */
@@ -195,34 +195,71 @@ a {
     display: flex;
     width: 200%; /* 2 páginas */
     transition: transform 0.5s ease-in-out;
+    align-items: stretch; 
 }
 
+/* ============================================== */
+/* --- ESTILOS DOS CARDS MODERNOS (CORRIGIDO) --- */
+/* ============================================== */
 .pilar-card {
-    flex-basis: 10%; /* 1/10 da largura do track (200%) = 20% do viewport */
+    /* CORREÇÃO: 
+      O 'flex-basis: 10%' (para 10 slots no track de 200%) estava correto,
+      mas o 'margin: 0 10px;' (total 20px) empurrava o 5º item para fora.
+      Usamos calc() para subtrair a margem do basis.
+    */
+    flex-basis: calc(10% - 20px); 
     flex-shrink: 0;
     background: var(--color-white);
-    padding: 25px;
-    margin: 0 10px; /* Espaçamento entre os cards */
+    padding: 30px 20px; 
+    margin: 0 10px; 
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     border-left: 5px solid var(--color-primary);
     transition: all 0.3s ease;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.pilar-icon {
+    font-size: 2.5rem; 
+    color: var(--color-primary); 
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    flex-shrink: 0; 
+}
+
+.pilar-text {
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+}
+.pilar-text h3 {
+    color: var(--color-primary);
+    font-size: 1.25rem; 
+    margin-bottom: 10px;
+}
+.pilar-text p {
+    font-size: 0.9rem;
+    margin-bottom: 0;
 }
 
 .pilar-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 25px rgba(0, 91, 255, 0.15); 
+    border-left-color: var(--color-accent); 
 }
+.pilar-card:hover .pilar-icon {
+    color: var(--color-accent); 
+    transform: scale(1.1); 
+}
+/* ============================================== */
+/* --- FIM DA CORREÇÃO DOS CARDS --- */
+/* ============================================== */
 
-.pilar-card h3 {
-    color: var(--color-primary);
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-}
-.pilar-card p {
-    font-size: 0.9rem;
-    margin-bottom: 0;
-}
 
 /* --- Controles de Navegação (Setas) - GERAL --- */
 .slider-nav {
@@ -255,7 +292,6 @@ a {
     color: var(--color-white);
 }
 
-/* Posição específica das setas */
 .slider-container .nav-btn[id$="-prev"] { position: absolute; left: 0px; }
 .slider-container .nav-btn[id$="-next"] { position: absolute; right: 0px; }
 
@@ -291,10 +327,8 @@ a {
 
 
 /* --- 4. Resumo Sobre Nós (COM CARROSSEL) --- */
-
-/* Corrige o scroll ao clicar no link "Sobre Nós" */
 #sobre {
-    scroll-margin-top: 100px; /* Altura aproximada do header */
+    scroll-margin-top: 100px; 
 }
 
 .about-summary .container {
@@ -310,7 +344,6 @@ a {
 
 /* ================================================= */
 /* --- ESTILOS DO CARROSSEL DE GALERIA (GERAL) ---   */
-/* Usado em "Sobre Nós" e nas "Unidades"             */
 /* ================================================= */
 
 .content-gallery-slider {
@@ -322,22 +355,41 @@ a {
 .gallery-slider-viewport {
     width: 100%;
     overflow: hidden;
-    border-radius: 10px; /* Arredonda a borda do viewport */
+    border-radius: 10px; 
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* Regra geral do track */
 .gallery-slider-track {
     display: flex;
-    /* 3 imagens = 300% de largura total */
-    width: 300%; 
     transition: transform 0.5s ease-in-out;
 }
 
+/* Regra geral do slide */
 .gallery-slide {
-    /* 1/3 da largura do track (300%) = 100% do viewport */
-    flex-basis: 33.3333%; 
     flex-shrink: 0;
 }
+
+/* Larguras específicas por ID */
+#gallery-track { width: 300%; }
+#lagoa-track { width: 300%; }
+#parnamirim-track { width: 300%; }
+#satelite-track { width: 300%; }
+/* NOVO: Regra para a galeria de 7 slides */
+#main-gallery-track { width: 700%; }
+
+/* Basis específico por ID */
+#gallery-track .gallery-slide,
+#lagoa-track .gallery-slide,
+#parnamirim-track .gallery-slide,
+#satelite-track .gallery-slide {
+    flex-basis: 33.3333%; /* 100 / 3 */
+}
+/* NOVO: Regra para a galeria de 7 slides */
+#main-gallery-track .gallery-slide {
+    flex-basis: 14.2857%; /* 100 / 7 */
+}
+
 
 .gallery-slide img {
     width: 100%;
@@ -345,7 +397,6 @@ a {
     display: block;
 }
 
-/* Ajusta as setas para ficarem dentro da área da imagem */
 .content-gallery-slider .slider-container {
     padding: 0 40px;
 }
@@ -363,7 +414,7 @@ a {
 
 /* --- 5. Depoimentos --- */
 .testimonials {
-    background-color: var(--color-primary); /* Fundo Azul */
+    background-color: var(--color-primary); 
     color: var(--color-white);
 }
 .testimonials h2 {
@@ -383,7 +434,7 @@ a {
     color: var(--color-text-light);
     padding: 30px;
     border-radius: 10px;
-    border-left: 5px solid var(--color-secondary); /* Borda Amarela */
+    border-left: 5px solid var(--color-secondary); 
     font-size: 1.1rem;
     font-style: italic;
     position: relative;
@@ -405,9 +456,8 @@ a {
     background-color: var(--color-bg-light);
 }
 
-/* Corrige o scroll ao clicar no link "Unidades" */
-#unidades, #parnamirim, #satelite {
-    scroll-margin-top: 100px; /* Altura aproximada do header */
+#unidades, #parnamirim, #satelite, #galeria {
+    scroll-margin-top: 100px; 
 }
 
 .unidade-header h2 {
@@ -438,12 +488,12 @@ a {
 
 /* --- 7. RODAPÉ (COMPLETO) --- */
 .footer {
-    background-color: #2c3e50;
+    background-color: #000080;
     color: var(--color-white);
     padding-top: 50px;
 }
 .footer-logo {
-    max-height: 80px; /* Aumentado para 80px */
+    max-height: 80px; 
     margin-bottom: 15px;
 }
 .footer-content {
@@ -453,7 +503,6 @@ a {
     gap: 30px;
     margin-bottom: 30px;
 }
-/* Cada coluna do footer */
 .footer-content > div {
     flex: 1;
     min-width: 220px;
@@ -470,7 +519,6 @@ a {
     margin-bottom: 10px;
     line-height: 1.6;
 }
-/* Estilizando ícones do footer */
 .footer-content p i {
     margin-right: 8px;
     color: var(--color-secondary);
@@ -485,7 +533,6 @@ a {
 }
 .footer-social a:hover { color: var(--color-secondary); }
 
-/* Ícones de redes sociais (Instagram, Facebook) */
 .footer-social-icons a {
     display: inline-block;
     color: var(--color-white);
@@ -507,7 +554,7 @@ a {
 .footer-bottom {
     text-align: center;
     padding: 20px 0;
-    border-top: 1px solid #34495e;
+    border-top: 1px solid #0f365e;
     font-size: 0.9rem;
     color: #bdc3c7;
 }
@@ -540,7 +587,7 @@ a {
     .nav-menu {
         position: fixed;
         top: 0;
-        left: -100%; /* Começa fora da tela */
+        left: -100%; 
         width: 100%;
         height: 100vh;
         background: var(--color-black);
@@ -552,7 +599,7 @@ a {
     }
     
     .nav-menu.active {
-        left: 0; /* Entra na tela */
+        left: 0; 
     }
     
     .nav-menu ul { 
@@ -571,7 +618,6 @@ a {
         padding: 12px 28px;
     }
     
-    /* Animação do "X" do menu */
     .menu-toggle.active span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
     }
@@ -583,11 +629,8 @@ a {
     }
 
 
-    /* ========================================================= */
-    /* --- CORREÇÃO: Slider de Pilares no Mobile (Scrollável) --- */
-    /* ========================================================= */
+    /* --- Slider de Pilares no Mobile (Scrollável) --- */
     
-    /* Esconde as setas e dots, pois será scroll manual */
     .pilares-destaque .slider-nav {
         display: none;
     }
@@ -595,71 +638,55 @@ a {
         display: none;
     }
     
-    /* Remove o padding lateral para o scroll ir de ponta a ponta */
     .pilares-destaque .slider-container {
         padding: 0;
     }
 
-    /* O viewport agora será scrollável horizontalmente */
     .pilar-slider-viewport {
         overflow-x: auto;
-        /* Adiciona um efeito de "parada" ao scrollar */
         scroll-snap-type: x mandatory;
-        /* Esconde a barra de scroll */
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
+        -ms-overflow-style: none;  
+        scrollbar-width: none;  
     }
     .pilar-slider-viewport::-webkit-scrollbar {
-        display: none; /* Chrome, Safari, Opera */
+        display: none; 
     }
 
-    /* O track volta a ter a largura baseada nos itens */
     .pilar-slider-track {
-        /* A largura não será mais 200% nem 100% */
         width: auto; 
-        /* Mantém a direção horizontal */
         flex-direction: row;
-        /* Ignora o JS de transformação */
         transform: none !important; 
     }
 
-    /* Cada card agora terá uma largura definida */
     .pilar-card {
-        /* Cada card ocupará ~80% da tela */
         flex-basis: 80%;
         width: 80%;
         flex-shrink: 0;
-        /* Faz o card "parar" no lugar certo ao scrollar */
         scroll-snap-align: start;
-        /* Ajusta a margem para o scroll */
-        margin: 0 0 0 10px; /* Remove inferior, mantém lateral */
+        margin: 0 0 0 10px; 
+        min-height: 180px; 
     }
     .pilar-card:first-child {
-        margin-left: 20px; /* Um padding inicial */
+        margin-left: 20px; 
     }
     .pilar-card:last-child {
-        margin-right: 20px; /* Um padding final */
+        margin-right: 20px; 
     }
-    
-    /* --- Fim da Correção --- */
     
     
     .about-summary .container {
         flex-direction: column;
     }
     
-    /* Ajustes no slider da galeria para mobile */
     .content-gallery-slider {
         padding: 0;
         width: 100%;
     }
     .content-gallery-slider .slider-container {
-        padding: 0 40px; /* Mantém o padding para as setas */
+        padding: 0 40px; 
     }
     
-    /* Ajustes das seções de unidade no mobile */
     .unidade-content {
-        /* Faz a imagem vir primeiro que o texto */
         flex-direction: column;
     }
     

@@ -112,13 +112,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. Carrossel da Galeria (Sobre Nós)
     setupCarousel('gallery-track', 'gallery-prev', 'gallery-next', 'gallery-dots', 3);
 
-    // 3. NOVO: Carrossel Unidade Lagoa Nova
+    // 3. Carrossel Unidade Lagoa Nova
     setupCarousel('lagoa-track', 'lagoa-prev', 'lagoa-next', 'lagoa-dots', 3);
 
-    // 4. NOVO: Carrossel Unidade Parnamirim
+    // 4. Carrossel Unidade Parnamirim
     setupCarousel('parnamirim-track', 'parnamirim-prev', 'parnamirim-next', 'parnamirim-dots', 3);
 
-    // 5. NOVO: Carrossel Unidade Satélite
+    // 5. Carrossel Unidade Satélite
     setupCarousel('satelite-track', 'satelite-prev', 'satelite-next', 'satelite-dots', 3);
+    
+    // 6. NOVO: Carrossel da Galeria Principal (7 slides)
+    setupCarousel('main-gallery-track', 'main-gallery-prev', 'main-gallery-next', 'main-gallery-dots', 7);
 
 });
